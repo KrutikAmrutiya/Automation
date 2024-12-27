@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke Testing" parallel="tests" thread-count="4">
+	<test name="Automation Smoke Testing">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<!-- <class name="Create_Task.TC_031_VerifyThatTheUserCanCreateANewTask"/>-->
+			<class name="All_Task.TC_032_VerifyThatTheUserCanClickOnTaskInTheSideNavBar"/> 
+<!--		
+		
+ 		<class name="Account_Settings.TC_047_VerifyThatTheUserCanNavigateToAccountSettings"/>
+ 		<class name="Account_Settings.TC_048_VerifyThatTheUserCanSeeTheWorkspaceName" />
+		<class name="Account_Settings.TC_049_VerifyThatTheUserCanMuteUnmuteNotification" />
+		<class name="Account_Settings.TC_051_VerifyThatTheUserCanClickOnTheAddWorkspace" />
+		<class name="Account_Settings.TC_052_VerifyThatTheUserCanClickOnSignOutButton" />
+		
+		<class name="All_Task.TC_032_VerifyThatTheUserCanClickOnTaskInTheSideNavBar"/>
+		
+		<class name="Create_Project.TC_029_VerifyThatTheUserCanCreateANewProject" />
+		
+		<class name="Create_Select_Workspace.TC_012_VerifyThatTheUserCanCreateANewWorkspace" />
+		<class name="Create_Select_Workspace.TC_014_VerifyThatTheUserIsAbleToSelectExistingWorkspace" />
+		<class name="Create_Select_Workspace.TC_016_VerifyThatTheUserIsAbleToRejectWorkspaceInvite" />
+		
+		<class name="Dashboard.TC_017_VerifyThatTheUserCanViewProfileAndWelcomMessage" />
+		<class name="Dashboard.TC_018_VerifyThatTheUserCanCreateNewProject" />
+		<class name="Dashboard.TC_019_VerifyThatTheUserCanStartDmOrGroupChat" />
+		<class name="Dashboard.TC_020_VerifyThatTheUserCanCreateWorkspace" />
+		<class name="Dashboard.TC_021_VerifyThatTheUserCanViewMemberAndStartChat" />
+		<class name="Dashboard.TC_023_VerifyThatTheUserCanViewAndClickOnTheLatestTasks" />
+		
+		<class name="Forgot_Password.TC_007_VerifyThatUserCanInitiatePasswordReset" />
+		
+		<class name="Group_chat_DMchat.TC_043_VerifyThatTheUserCanClickChatSection" />
+		<class name="Group_chat_DMchat.TC_044_VerifyThatTheUserCanViewAllGroupChatsAndDm" />
+		
+		<class name="Launch_Web_Client.TC_001_VerifyLaunchWebClient" />
+		
+		<class name="Project_Details.TC_038_VerifyThatTheUserIsAbleToFilterTasks"/>
+		
+		<class name="Side_Nav_Bar.TC_026_VerifyThatTheUserCanViewMembersClickOnTheMessageIcon" />
+		
+		<class name="Sign_in.TC_005_VerifyThatNewUserCanSignIn" />
+		<class name="Sign_in.TC_006_VerifyThatTheUserCannotSign" />
+		<class name="Sign_up.TC_002_VerifyThatNewUserCanSignup" />	-->	
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->

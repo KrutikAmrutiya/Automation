@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Group_chat_DMchat.TC_043_VerifyThatTheUserCanClickChatSection">
+        <methods>
+          <include name="TC_043_VerifyThatTheUserCanClickChatSection"/>
+          <include name="tearDown"/>
+          <include name="masterTearDown"/>
+          <include name="MainSetUp"/>
+          <include name="LoadExtent"/>
+        </methods>
+      </class> <!-- Group_chat_DMchat.TC_043_VerifyThatTheUserCanClickChatSection -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
