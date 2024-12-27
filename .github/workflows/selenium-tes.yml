@@ -1,0 +1,48 @@
+name: Run Selenium Tests
+
+on:
+  push:
+    branches:
+      - main  # Or any other branch you want to trigger the tests on
+  pull_request:
+    branches:
+      - main  # Or any other branch you want to trigger the tests on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
+    - name: Set up Java
+      uses: actions/setup-java@v2
+      with:
+        java-version: '23.0.1'  # Specify the Java version you're using
+        distribution: 'adoptopenjdk'  # Or use 'zulu' or other distributions if necessary
+
+    - name: Set up Maven
+      uses: actions/setup-java@v2
+      with:
+        maven-version: '3.9.9'  # Adjust according to your setup
+
+    - name: Build and test with Maven
+      run: mvn clean test  # Runs your tests (make sure your Maven project has a proper 'test' phase)
+      env:
+        DISPLAY: ':99'  # Required if using GUI-based tests (e.g., running tests in a browser)
+
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: target/surefire-reports/*.xml  # Adjust the path according to your Maven output directory
+
+    - name: Post test result
+      run: |
+        if grep -q 'FAILURES' target/surefire-reports/*.xml; then
+          echo "Test Failed" 
+          exit 1
+        else
+          echo "Test Passed"
+        fi
