@@ -1,0 +1,31 @@
+name: CI/CD Pipeline for Selenium Tests
+
+on:
+  push:  # Trigger on code push
+    branches:
+      - main
+  pull_request:  # Trigger on pull requests
+
+jobs:
+  selenium-tests:
+    runs-on: windows-latest  # Use a Windows runner
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Java
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'  # Use Zulu OpenJDK
+          java-version: '17'    # Use your project's Java version
+
+      # Step 3: Install dependencies
+      - name: Install Maven dependencies
+        run: mvn install  # Adjust if using Gradle: ./gradlew build
+
+      # Step 4: Run Selenium tests
+      - name: Run Selenium Tests
+        run: mvn test  # Command to execute your tests
